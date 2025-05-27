@@ -60,12 +60,14 @@ finish_pos = json.loads(results_data)
 
 finishing_info = {}
 
+# loop to find driver name, constructor and finish position
 for finish in finish_pos['MRData']['RaceTable']['Races'][0]['Results']:
     driver_id = finish['Driver']['driverId']
     full_name = finish['Driver']['givenName'] + ' ' + finish['Driver']['familyName']
     constructor_name = finish['Constructor']['name']
     position = finish['position']
 
+    # add to dict
     finishing_info[driver_id] = {
         'name': full_name,
         'position': position,
