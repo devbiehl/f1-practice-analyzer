@@ -27,10 +27,10 @@ A python formula to collect data using OpenF1 APIs and JSON parsing on Formula 1
 
 You will be prompted to input:
 
--track name (e.g. Catalunya)
--session name (e.g. Practice 1)
--race year (e.g. 2025)
--file name for output (.txt format)
+- track name (e.g. Catalunya)
+- session name (e.g. Practice 1)
+- race year (e.g. 2025)
+- file name for output (.txt format)
 
 ---
 
