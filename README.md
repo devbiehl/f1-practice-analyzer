@@ -25,10 +25,12 @@ A python formula to collect data using OpenF1 APIs and JSON parsing on Formula 1
    ```bash
    python3 f1_practice.py
 
-   input track name (e.g. Catalunya)
-   input session name (e.g. Practice 1)
-   input race year (e.g. 2025)
-   input file name for output (.txt format)
+You will be prompted to input:
+
+track name (e.g. Catalunya)
+session name (e.g. Practice 1)
+race year (e.g. 2025)
+file name for output (.txt format)
 
 ---
 
