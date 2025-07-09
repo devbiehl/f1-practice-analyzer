@@ -1,5 +1,7 @@
 # f1-practice-analyzer
-A python formula to collect data using OpenF1 APIs and JSON parsing on Formula 1 practice session of users choice to calculate performance trends.
+A python formula to collect data using OpenF1 APIs and SQLite on Formula 1 practice sessions of users input to calculate performance trends. 
+
+This program uses modular OOP, supports multiple sessions/events and includes logging and error handling.
 
 ---
 
