@@ -269,10 +269,20 @@ class Session:
                 print(f"{team.name}: {format_time(best_avg)} ({compound})")
         print()
     def save_to_db(self):
+        if not self.session_key:
+            logger.warning("No session_key found - skipping database insert.")
+            return
+        
+        import os
         logger.info("Saving session summary to database")
+        
         conn = connect_db()
-        ### ONLY RUN CREATE_TABLE() ONE TIME FOR INITIAL CREATE###
-        #create_table(conn)
+
+        # Only run schema creation if DB file doesnt exist
+        if not os.path.exists('f1_analysis.db'):
+            logger.info("Database not found. Creating schema.")
+            create_table(conn)
+
         # BUild driver results for database
         driver_results = []
         for driver in self.drivers.values():
@@ -315,6 +325,9 @@ def run_f1_analysis():
 
         session = Session(track_name, session_name, year)
         session.fetch_data()
+        if not session.session_key:
+            logger.error("Invalid session input. Exiting early.")
+            return
         session.build_driver_objects()
         session.summary()
         session.save_to_db()
