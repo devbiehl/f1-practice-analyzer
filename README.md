@@ -5,7 +5,9 @@ A python formula to collect data using OpenF1 APIs and JSON parsing on Formula 1
 
 ### Project Versions
 - 'main_f1_analyzer': Latest Version using OpenF1 API -- takes user input for Track, Session and Year. Includes tire compound mapping to driver lap times and mapping drivers to teams. Updates database with lap analysis for each session the user inputs and connects it to Event(race weekend) for fast Query.
+
 - 'f1_practice.py': Legacy version using the OpenF1 API (includes tire compound logic and session flexibility with user input).
+
 - 'old_f1_script.py': Legacy version using Ergast API for basic lap time and position analysis.
 
 ---
@@ -26,6 +28,8 @@ A python formula to collect data using OpenF1 APIs and JSON parsing on Formula 1
    ```bash
    python3 main_f1_analyzer.py
 
+3. When running program for the first time toggle the create_table(conn) function (line 275) inside the save_to_db(self) object by removing the '#' infront of it. After you have ran the program once the database will be built so you have to toggle it off again by commenting it out. Add '#' back infront of create_table(conn)
+
 You will be prompted to input:
 
 - track name (e.g. Catalunya)
@@ -37,6 +41,7 @@ You will be prompted to input:
 ### Requirements
 - Python 3.7+
 - requests library
+- sqlite3
 
 ---
 
