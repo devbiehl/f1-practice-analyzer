@@ -30,8 +30,6 @@ This program uses modular OOP, supports multiple sessions/events and includes lo
    ```bash
    python3 main_f1_analyzer.py
 
-3. When running program for the first time toggle the create_table(conn) function (line 275) inside the save_to_db(self) object by removing the '#' infront of it. After you have ran the program once the database will be built so you have to toggle it off again by commenting it out. Add '#' back infront of create_table(conn)
-
 You will be prompted to input:
 
 - track name (e.g. Catalunya)
