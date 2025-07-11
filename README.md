@@ -1,12 +1,14 @@
-# f1-practice-analyzer
+# Event Data Pipeline
 A python formula to collect data using OpenF1 APIs and SQLite on Formula 1 practice sessions of users input to calculate performance trends. 
 
-This program uses modular OOP, supports multiple sessions/events and includes logging and error handling.
+This is a modular object oriented program for event analysis. With minimal code changes it can be used for Business KPIs, Finance analysis, etc. It can support multiple sessions/events and includes logging and error handling.
 
 ---
 
 ### Project Versions
-- 'main_f1_analyzer': Latest Version using OpenF1 API -- takes user input for Track, Session and Year. Includes tire compound mapping to driver lap times and mapping drivers to teams. Updates database with lap analysis for each session the user inputs and connects it to Event(race weekend) for fast Query.
+- 'main.py': Latest Version using Modular OOP structure.
+
+- 'main_f1_analyzer': Legacy Version using OpenF1 API -- takes user input for Track, Session and Year. Includes tire compound mapping to driver lap times and mapping drivers to teams. Updates database with lap analysis for each session the user inputs and connects it to Event(race weekend) for fast Query.
 
 - 'f1_practice.py': Legacy version using the OpenF1 API (includes tire compound logic and session flexibility with user input).
 
@@ -28,7 +30,7 @@ This program uses modular OOP, supports multiple sessions/events and includes lo
 1. Clone this repo.
 2. Run the script:
    ```bash
-   python3 main_f1_analyzer.py
+   python3 main.py
 
 You will be prompted to input:
 
