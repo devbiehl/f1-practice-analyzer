@@ -7,14 +7,6 @@ def connect_db():
 def create_table(conn):
     cur = conn.cursor()
     cur.executescript('''
-    
-    DROP TABLE IF EXISTS    Event;
-    DROP TABLE IF EXISTS    Session;
-    DROP TABLE IF EXISTS    Team;
-    DROP TABLE IF EXISTS    Driver;
-    DROP TABLE IF EXISTS    DriverSessionParticipation;
-    DROP TABLE IF EXISTS    Analysis;
-                      
     CREATE TABLE IF NOT EXISTS Event(
         event_id    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
         name        TEXT NOT NULL,
