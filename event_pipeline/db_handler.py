@@ -1,7 +1,7 @@
 import os
 from driver import Driver
 from logging_config import setup_logger
-from f1db import connect_db, create_table, insert_session_summary
+from db_schema import connect_db, create_table, insert_session_summary
 logger = setup_logger()
 
 class DBHandler:
