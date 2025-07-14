@@ -125,12 +125,12 @@ Williams: 1:29.720 (HARD)
 
 ### How to Use
 1. Clone this repository
-    '''bash
+    ```bash
     git clone https://github.com/devbiehl/event-data-pipeline.git
     cd event-data-pipeline
 
 2. Install requirements
-    '''bash
+    ```bash
     pip install -r requirements.txt
 
 3. Run the pipeline:
@@ -173,7 +173,7 @@ event-data-pipeline/
 ### Testing
 Tests using pytest and pytest-mock
 To run tests:
-    '''bash
+    ```bash
     pytest -v
 
 ---
