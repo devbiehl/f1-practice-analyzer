@@ -19,7 +19,7 @@ This is a modular object oriented program for event analysis. With minimal code 
 ---
 
 ### EXAMPLE OUTPUT
-
+```
 Summary for Practice 1 at Silverstone, 2025
 ------------------------------------------------------------
 
@@ -120,7 +120,7 @@ Haas F1 Team: 1:29.134 (MEDIUM)
 Kick Sauber: 1:29.138 (MEDIUM)
 Aston Martin: 1:29.265 (HARD)
 Williams: 1:29.720 (HARD)
-
+```
 ---
 
 ### How to Use
@@ -146,6 +146,7 @@ You will be prompted to input:
 ---
 
 ### Project Structure
+```
 event-data-pipeline/
 |
 |-- event_pipeline/         # Modular codebase
@@ -167,6 +168,7 @@ event-data-pipeline/
 |-- requirements.txt
 |-- .gitignore
 |__ README.md
+```
 
 ---
 
