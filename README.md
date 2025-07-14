@@ -174,8 +174,10 @@ event-data-pipeline/
 Tests using pytest and pytest-mock
 
 1. To run tests:
+
     ```bash
     pytest -v
+    ```
 
 ---
 
