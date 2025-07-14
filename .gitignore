@@ -1,6 +1,9 @@
 # Ignore database file
 f1_analysis.db
 
+# Ignore DS_Store
+.DS_Store
+
 # Ignore database deleter script
 db_deleter.py
 
