@@ -1,5 +1,5 @@
-from driver import Driver
-from team import Team
+from .driver import Driver
+from .team import Team
 
 # utils.py
 def format_time(seconds):

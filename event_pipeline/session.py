@@ -1,7 +1,7 @@
-from data_ingestor import SessionFetcher, DataIngestor
-from lap_analyzer import LapAnalyzer
-from db_handler import DBHandler
-from logging_config import setup_logger
+from .data_ingestor import SessionFetcher, DataIngestor
+from .lap_analyzer import LapAnalyzer
+from .db_handler import DBHandler
+from .logging_config import setup_logger
 
 class Session:
     def __init__(self, track_name, session_name, year):

@@ -1,7 +1,7 @@
-from logging_config import setup_logger
-from utils import format_time, best_avg_lap 
-from driver import Driver
-from team import Team
+from .logging_config import setup_logger
+from .utils import format_time, best_avg_lap 
+from .driver import Driver
+from .team import Team
 logger = setup_logger()
 
 class LapAnalyzer:

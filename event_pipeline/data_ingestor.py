@@ -1,7 +1,7 @@
 import requests
-from driver import Driver
-from team import Team
-from logging_config import setup_logger
+from .driver import Driver
+from .team import Team
+from .logging_config import setup_logger
 logger = setup_logger()
 
 class SessionFetcher:

@@ -1,4 +1,4 @@
-from session import Session
+from event_pipeline.session import Session
 
 def run_analysis():
     try:
