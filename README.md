@@ -5,45 +5,16 @@ This is a modular object oriented program for event analysis. With minimal code 
 
 ---
 
-### Project Versions
-- 'main.py': Latest Version using Modular OOP structure.
-
-- 'main_f1_analyzer': Legacy Version using OpenF1 API -- takes user input for Track, Session and Year. Includes tire compound mapping to driver lap times and mapping drivers to teams. Updates database with lap analysis for each session the user inputs and connects it to Event(race weekend) for fast Query.
-
-- 'f1_practice.py': Legacy version using the OpenF1 API (includes tire compound logic and session flexibility with user input).
-
-- 'old_f1_script.py': Legacy version using Ergast API for basic lap time and position analysis.
-
----
-
 ### Features
-- Pulls live session, lap, and tire data using 'session_key'.
-- Analyzes fastest laps on **Soft** compounds (for qualifying simulations) -- excludes outlier slow laps.
-- Calculates average lap times on **Medium/Hard** compounds (for race simulations) -- excludes outlier slow laps.
+- Pulls live session, lap, and tire data via session key
+- Identifies fastest laps on **Soft** compounds (for qualifying simulations)
+- Calculates average lap times on **Medium/Hard** compounds (for race simulations)
 - Maps driver numbers to full names using OpenF1 metadata.
 - Generates a clean summary report to terminal
-- Builds database for Event(race weekend(track name and year)), each session(practice 1,2,3), drivers name and number, team names, driver analysis(fastest soft tire performance, avg medium and hard compound times, and best race pace(lowest avg time) compound)
-
----
-
-### How to Use
-1. Clone this repo.
-2. Run the script:
-   ```bash
-   python3 main.py
-
-You will be prompted to input:
-
-- track name (e.g. Catalunya)
-- session name (e.g. Practice 1)
-- race year (e.g. 2025)
-
----
-
-### Requirements
-- Python 3.7+
-- requests library
-- sqlite3
+- Builds a normalized SQLite database:
+    - Stores race weekend (Event) -> sessions -> driver/team data
+    - Records tire-based performance stats (fastest laps, average pace, compound choices)
+    - Includes loggging and error handling for traceability
 
 ---
 
@@ -149,3 +120,88 @@ Haas F1 Team: 1:29.134 (MEDIUM)
 Kick Sauber: 1:29.138 (MEDIUM)
 Aston Martin: 1:29.265 (HARD)
 Williams: 1:29.720 (HARD)
+
+---
+
+### How to Use
+1. Clone this repository
+    '''bash
+    git clone https://github.com/devbiehl/event-data-pipeline.git
+    cd event-data-pipeline
+
+2. Install requirements
+    '''bash
+    pip install -r requirements.txt
+
+3. Run the pipeline:
+   ```bash
+   python3 main.py
+
+You will be prompted to input:
+
+- track name (e.g. Silverstone)
+- session name (e.g. Practice 1)
+- race year (e.g. 2025)
+
+---
+
+### Project Structure
+event-data-pipeline/
+|
+|-- event_pipeline/         # Modular codebase
+|   |-- session.py          # Core pipeline runner
+|   |-- data_ingestor.py    # API data fetch and process
+|   |-- lap_analyzer.py     # Lap time summary logic
+|   |-- db_handler.py       # SQLite layer
+|   |-- logging_config.py   # Logging setup
+|   |-- driver.py           # Driver object builder
+|   |-- team.py             # Team object builder
+|   |-- db_schema.py        # SQLite schema
+|   |-- utils.py            # Helper functions
+|   |-- __init__.py         # Package initializer
+|
+|-- tests/                  # pytest unit tests
+|   |-- test_session.py
+|
+|-- main.py                 # Entry point
+|-- requirements.txt
+|-- .gitignore
+|__ README.md
+
+---
+
+### Testing
+Tests using pytest and pytest-mock
+To run tests:
+    '''bash
+    pytest -v
+
+---
+
+### Legacy Scripts
+- 'main_f1_analyzer': Legacy Version using OpenF1 API -- takes user input for Track, Session and Year. Includes tire compound mapping to driver lap times and mapping drivers to teams. Updates database with lap analysis for each session the user inputs and connects it to Event(race weekend) for fast Query.
+
+- 'f1_practice.py': Legacy version using the OpenF1 API (includes tire compound logic and session flexibility with user input).
+
+- 'old_f1_script.py': Legacy version using Ergast API for basic lap time and position analysis.
+
+---
+
+
+### Requirements
+- Python 3.7+
+- requests
+- sqlite3 (built in)
+- pytest
+- pytest-mock
+
+---
+
+### Author
+Devin Biehl -- GitHub
+"This project is part of a portfolio focused on data engineering and analytical pipelines."
+
+---
+
+### License
+[MIT](LICENSE)
